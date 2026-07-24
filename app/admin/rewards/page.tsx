@@ -19,15 +19,20 @@ export default function AdminRewardsPage() {
   };
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="mb-1 text-2xl font-bold">Rewards Administration</h1>
+          <h1 className="mb-1 text-xl font-bold sm:text-2xl">
+            Rewards Administration
+          </h1>
           <p className="text-sm text-slate-400">
             Manage badges, assign achievements, create promotions
           </p>
         </div>
-        <Button onClick={() => setShowPromo(!showPromo)}>
+        <Button
+          onClick={() => setShowPromo(!showPromo)}
+          className="w-full sm:w-auto"
+        >
           <Plus className="h-4 w-4" />
           Create Promotion
         </Button>
@@ -150,13 +155,14 @@ export default function AdminRewardsPage() {
             </select>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Button
             onClick={() => {
               const user = users.find((u) => u.id === assignUser);
               const badge = badges.find((b) => b.id === assignBadge);
               notify(`Assigned "${badge?.name}" to ${user?.name}`);
             }}
+            className="w-full sm:w-auto"
           >
             Assign Badge
           </Button>
@@ -167,6 +173,7 @@ export default function AdminRewardsPage() {
               const badge = badges.find((b) => b.id === assignBadge);
               notify(`Revoked "${badge?.name}" from ${user?.name}`);
             }}
+            className="w-full sm:w-auto"
           >
             Revoke Badge
           </Button>

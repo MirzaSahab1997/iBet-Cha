@@ -45,15 +45,21 @@ export default function AdminTransactionsPage() {
   };
 
   return (
-    <div>
+    <div className="min-w-0">
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="mb-1 text-2xl font-bold">Transaction Monitoring</h1>
+          <h1 className="mb-1 text-xl font-bold sm:text-2xl">
+            Transaction Monitoring
+          </h1>
           <p className="text-sm text-slate-400">
             Financial ledger — deposits, withdrawals, payouts & fees
           </p>
         </div>
-        <Button variant="secondary" onClick={handleExport}>
+        <Button
+          variant="secondary"
+          onClick={handleExport}
+          className="w-full sm:w-auto"
+        >
           <Download className="h-4 w-4" />
           Export CSV
         </Button>
@@ -88,16 +94,16 @@ export default function AdminTransactionsPage() {
 
       <div className="overflow-hidden rounded-2xl border border-white/5 bg-brand-dark-card">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="w-full min-w-[800px] text-left text-sm">
             <thead>
               <tr className="border-b border-white/5 text-xs text-slate-500">
-                <th className="px-5 py-3 font-medium">ID</th>
-                <th className="px-5 py-3 font-medium">User</th>
-                <th className="px-5 py-3 font-medium">Type</th>
-                <th className="px-5 py-3 font-medium">Description</th>
-                <th className="px-5 py-3 font-medium">Amount</th>
-                <th className="px-5 py-3 font-medium">Status</th>
-                <th className="px-5 py-3 font-medium">Date</th>
+                <th className="px-4 py-3 font-medium sm:px-5">ID</th>
+                <th className="px-4 py-3 font-medium sm:px-5">User</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Type</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Description</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Amount</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Status</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Date</th>
               </tr>
             </thead>
             <tbody>

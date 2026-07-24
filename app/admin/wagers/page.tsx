@@ -30,8 +30,8 @@ export default function AdminWagersPage() {
     filter === "all" ? wagers : wagers.filter((w) => w.status === filter);
 
   return (
-    <div>
-      <h1 className="mb-1 text-2xl font-bold">Wager Monitoring</h1>
+    <div className="min-w-0">
+      <h1 className="mb-1 text-xl font-bold sm:text-2xl">Wager Monitoring</h1>
       <p className="mb-6 text-sm text-slate-400">
         Track all wagers, pots, outcomes, and disputes
       </p>

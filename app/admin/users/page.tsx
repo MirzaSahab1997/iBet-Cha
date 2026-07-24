@@ -34,8 +34,8 @@ export default function AdminUsersPage() {
   };
 
   return (
-    <div>
-      <h1 className="mb-1 text-2xl font-bold">User Management</h1>
+    <div className="min-w-0">
+      <h1 className="mb-1 text-xl font-bold sm:text-2xl">User Management</h1>
       <p className="mb-6 text-sm text-slate-400">
         View, suspend, verify, and manage platform users
       </p>
@@ -47,7 +47,7 @@ export default function AdminUsersPage() {
       )}
 
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="relative max-w-sm flex-1">
+        <div className="relative w-full max-w-sm flex-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
           <input
             value={search}
@@ -56,7 +56,7 @@ export default function AdminUsersPage() {
             className="w-full rounded-xl border border-white/10 bg-brand-dark-card py-2.5 pl-10 pr-4 text-sm outline-none focus:border-brand-green"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {(["all", "active", "pending", "suspended"] as const).map((f) => (
             <button
               key={f}
@@ -76,15 +76,15 @@ export default function AdminUsersPage() {
 
       <div className="overflow-hidden rounded-2xl border border-white/5 bg-brand-dark-card">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="w-full min-w-[700px] text-left text-sm">
             <thead>
               <tr className="border-b border-white/5 text-xs text-slate-500">
-                <th className="px-5 py-3 font-medium">User</th>
-                <th className="px-5 py-3 font-medium">Status</th>
-                <th className="px-5 py-3 font-medium">Balance</th>
-                <th className="px-5 py-3 font-medium">W/L</th>
-                <th className="px-5 py-3 font-medium">Joined</th>
-                <th className="px-5 py-3 font-medium">Actions</th>
+                <th className="px-4 py-3 font-medium sm:px-5">User</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Status</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Balance</th>
+                <th className="px-4 py-3 font-medium sm:px-5">W/L</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Joined</th>
+                <th className="px-4 py-3 font-medium sm:px-5">Actions</th>
               </tr>
             </thead>
             <tbody>
